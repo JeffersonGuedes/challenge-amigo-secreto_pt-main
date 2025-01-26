@@ -6,6 +6,8 @@
     --color-button-hover: #e55720;
     --color-text: #444444;
     --color-white: #FFFFFF;
+    --color-button-clear: #d34242;
+    --color-button-clear-hover: #af3636;
 }
 
 /* Estilos gerais */
@@ -43,7 +45,7 @@ body {
 .input-section {
     flex: 60%;
     background-color: var(--color-secondary);
-    border: 1px solid #000;
+    border: 1px solid var(--color-secondary);
     border-radius: 64px 64px 0 0;
     display: flex;
     flex-direction: column;
@@ -82,14 +84,25 @@ body {
 .input-name {
     width: 100%;
     padding: 10px;
-    border: 2px solid #000;
+    border: 2px solid #ffffff;
     border-radius: 25px 0 0 25px;
     font-size: 16px;
+    outline: none;
+}
+
+.input-name:focus {
+    border: 1px solid var(--color-secondary);
 }
 
 .button-container {
-    width: 300px;
+    width: 100%;
+    height: auto;
     justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 /* Estilos de entrada de texto */
@@ -119,10 +132,13 @@ button {
     background-color: var(--color-tertiary);
     color: var(--color-text);
     border-radius: 0 25px 25px 0;
+    border: none;
+    transition: 0.3s ease-in-out;
 }
 
-.button-add:hover {
+.button-add:hover{
     background-color: #a1a1a1;
+    color: var(--color-secondary);
 }
 
 /* Listas */
@@ -132,6 +148,10 @@ ul {
     font-family: "Inter", sans-serif;
     font-size: 18px;
     margin: 20px 0;
+}
+
+.name-danger{
+    color: var(--color-button-clear-hover);
 }
 
 .result-list {
@@ -146,11 +166,14 @@ ul {
 .button-draw {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 300px;
     padding: 10px 40px;
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
+    border: none;
+    border-color: var(--color-button);
+    transition: 0.3s ease-in-out;
 }
 
 .button-draw img {
@@ -159,4 +182,21 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+.button-clear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 55px;
+    color: var(--color-white);
+    background-color: var(--color-button-clear);
+    font-size: 16px;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+.button-clear:hover {
+    background-color: var(--color-button-clear-hover);
 }
